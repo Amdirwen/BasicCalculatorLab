@@ -23,11 +23,8 @@ namespace BasicCalculator
             Console.WriteLine("Enter the wind speed in mph");
             int windSpeed = int.Parse(Console.ReadLine());
 
-            double result;
-            double exponent = 0.16;
-            result = Math.Pow(windSpeed, exponent);
 
-            double windChill = 35.75 + 0.6215*temperature - 35.75*result + 0.4275*temperature*result;
+            double windChill = 35.75 + 0.6215*temperature - 35.75*Math.Pow(windSpeed, 0.16) + 0.4275*temperature*Math.Pow(windSpeed, 0.16);
 
             Console.WriteLine("The wind chill is " + windChill);
         }
